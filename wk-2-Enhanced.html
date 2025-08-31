@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    section {
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #f2f2f2;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #aaa;
+    }
+    input[type="submit"] {
+      width: auto;
+      background: #2c3e50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    input[type="submit"]:hover {
+      background: #1a242f;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Job Application Portal</h1>
+    <p>Please review the details below and complete the application form to apply for a position.</p>
+  </header>
+
+  <!-- Lists Section -->
+  <section>
+    <h2>Available Positions</h2>
+    <ul>
+      <li>Software Developer</li>
+      <li>Graphic Designer</li>
+      <li>Marketing Specialist</li>
+      <li>Customer Support Officer</li>
+    </ul>
+  </section>
+
+  <!-- Table Section -->
+  <section>
+    <h2>Company Benefits</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Benefit</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Health Insurance</td>
+          <td>Comprehensive medical and dental coverage</td>
+        </tr>
+        <tr>
+          <td>Flexible Hours</td>
+          <td>Work-life balance with remote options</td>
+        </tr>
+        <tr>
+          <td>Professional Growth</td>
+          <td>Training and skill development programs</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Media Section -->
+  <section>
+    <h2>About Our Company</h2>
+    <figure>
+      <img src="images/wkin envn.jpg" alt="A picture of working environment" width="400" height="300">
+      <figcaption>Our modern office environment</figcaption>
+    </figure>
+    <audio controls>
+      <source src="sample-audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <video controls width="400">
+      <source src="company-intro.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+  </section>
+
+  <!-- Form Section -->
+  <section>
+    <h2>Job Application Form</h2>
+    <form action="#" method="post">
+      
+      <fieldset>
+        <legend>Personal Details</legend>
+
+        <!-- Readonly Application ID -->
+        <label for="appid">Application ID:</label>
+        <input type="text" id="appid" name="appid" value="APP2025-001" readonly>
+
+        <label for="fname">Full Name:</label>
+        <input type="text" id="fname" name="fname" required minlength="2" placeholder="Enter your full name">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="example@mail.com" autocomplete="email">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="^[0-9]{10,15}$" placeholder="Enter phone number">
+      </fieldset>
+
+      <fieldset>
+        <legend>Job Information</legend>
+        <label for="position">Position Applied For:</label>
+        <select id="position" name="position" required>
+          <option value="">--Select--</option>
+          <option value="developer">Software Developer</option>
+          <option value="designer">Graphic Designer</option>
+          <option value="marketing">Marketing Specialist</option>
+          <option value="support">Customer Support Officer</option>
+        </select>
+
+        <label for="resume">Upload Resume (PDF only):</label>
+        <input type="file" id="resume" name="resume" accept=".pdf" required>
+
+        <label for="cover">Cover Letter:</label>
+        <textarea id="cover" name="cover" rows="4" cols="30" placeholder="Write a short cover letter here..." required></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Other Details</legend>
+        <label for="experience">Years of Experience:</label>
+        <input type="number" id="experience" name="experience" min="0" max="40" required placeholder="e.g. 3">
+
+        <label for="linkedin">LinkedIn Profile (required):</label>
+        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+
+        <label>Willing to Relocate?</label>
+        <input type="radio" id="relocate-yes" name="relocate" value="yes" required>
+        <label for="relocate-yes">Yes</label>
+        <input type="radio" id="relocate-no" name="relocate" value="no">
+        <label for="relocate-no">No</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Agreement</legend>
+        <label>
+          <input type="checkbox" name="terms" required> I confirm that all details provided are correct.
+        </label>
+      </fieldset>
+
+      <input type="submit" value="Submit Application">
+    </form>
+  </section>
+
+</body>
+</html>
